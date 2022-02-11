@@ -5,5 +5,9 @@
     <string name="expenditure">지출</string>
     <string name="stats_per_category">항목별 수입 / 지출</string>
 
+    <string name="content_description_item_icon">Icon for income / expenditure item.</string>
+
     <string name="sample_won">50,000원</string>
+    <string name="sample_time">2월 11일 오후 3:10</string>
+    <string name="sample_item_name">피자헛</string>
 </resources>
