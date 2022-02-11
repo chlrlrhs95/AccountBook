@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.accountbook.R
 import com.example.accountbook.data.Item
 import com.example.accountbook.data.ItemType
+import com.example.accountbook.format
 
 class DashboardFragment : Fragment() {
     override fun onCreateView(
@@ -49,6 +51,9 @@ class DashboardFragment : Fragment() {
 
         initializeRecyclerView(view, R.id.rvIncome, incomeAdapter)
         initializeRecyclerView(view, R.id.rvExpenditure, expenditureAdapter)
+
+        view.findViewById<TextView>(R.id.tvIncome).text = income.formattedValueSum()
+        view.findViewById<TextView>(R.id.tvExpenditure).text = expenditure.formattedValueSum()
     }
 
     private fun initializeRecyclerView(root: View, recyclerViewId: Int, adapter: ItemAdapter) {
@@ -61,3 +66,5 @@ class DashboardFragment : Fragment() {
         fun newInstance() = DashboardFragment()
     }
 }
+
+private fun List<Item>.formattedValueSum() = this.sumOf { e -> e.value }.format() + '원'
