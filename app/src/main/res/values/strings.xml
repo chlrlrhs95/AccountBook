@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AccountBook</string>
+
+    <string name="income">수입</string>
+    <string name="expenditure">지출</string>
+    <string name="stats_per_category">항목별 수입 / 지출</string>
+
+    <string name="sample_won">50,000원</string>
 </resources>
