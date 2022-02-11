@@ -31,16 +31,16 @@ class DashboardFragment : Fragment() {
     )
 
     private val expenditure = listOf(
-        Item(ItemType.EXPENDITURE, 123456789, 50000, "피자헛"),
-        Item(ItemType.EXPENDITURE, 123456789, 60000, "도미노피자"),
-        Item(ItemType.EXPENDITURE, 123456789, 20000, "피자스쿨"),
-        Item(ItemType.EXPENDITURE, 123456789, 25000, "피자나라 치킨공주"),
-        Item(ItemType.EXPENDITURE, 123456789, 30000, "BBQ"),
-        Item(ItemType.EXPENDITURE, 123456789, 50000, "교촌치킨"),
-        Item(ItemType.EXPENDITURE, 123456789, 50000, "호식이 두마리치킨"),
-        Item(ItemType.EXPENDITURE, 123456789, 50000, "노랑통닭"),
-        Item(ItemType.EXPENDITURE, 123456789, 50000, "프라닭 치킨"),
-        Item(ItemType.EXPENDITURE, 123456789, 50000, "BHC"),
+        Item(ItemType.EXPENDITURE, 123456789, 30000, "BBQ", R.drawable.ic_chicken),
+        Item(ItemType.EXPENDITURE, 123456789, 50000, "호식이 두마리치킨", R.drawable.ic_chicken),
+        Item(ItemType.EXPENDITURE, 123456789, 50000, "피자헛", R.drawable.ic_baseline_local_pizza_24),
+        Item(ItemType.EXPENDITURE, 123456789, 50000, "교촌치킨", R.drawable.ic_chicken),
+        Item(ItemType.EXPENDITURE, 123456789, 60000, "도미노피자", R.drawable.ic_baseline_local_pizza_24),
+        Item(ItemType.EXPENDITURE, 123456789, 20000, "피자스쿨", R.drawable.ic_baseline_local_pizza_24),
+        Item(ItemType.EXPENDITURE, 123456789, 50000, "노랑통닭", R.drawable.ic_chicken),
+        Item(ItemType.EXPENDITURE, 123456789, 25000, "피자나라 치킨공주", R.drawable.ic_baseline_local_pizza_24),
+        Item(ItemType.EXPENDITURE, 123456789, 50000, "프라닭 치킨", R.drawable.ic_chicken),
+        Item(ItemType.EXPENDITURE, 123456789, 50000, "BHC", R.drawable.ic_chicken),
     )
 
     private val incomeAdapter = ItemAdapter(income)
