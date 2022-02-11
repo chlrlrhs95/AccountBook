@@ -4,13 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
-
-
-    <FrameLayout
-        android:id="@+id/fl_con"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bnv_main"
@@ -22,8 +17,13 @@
         android:background="@android:color/darker_gray"
         app:itemBackground="@android:color/darker_gray"
         app:itemTextColor="@color/black"
-        app:menu="@menu/menu_bottom" >
+        app:menu="@menu/menu_bottom" />
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+    <FrameLayout
+        android:id="@+id/fl_con"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bnv_main" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.example.accountbook
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.accountbook.dashboard.DashboardFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -10,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        
+
         bottomTabListener()
     }
 
@@ -24,15 +25,9 @@ class MainActivity : AppCompatActivity() {
         bnvMain.setOnItemSelectedListener { item ->
             setFragment(
                 when (item.itemId) {
-                    R.id.tab_main -> {
-                        MainFragment()
-                    }
-                    R.id.tab_list -> {
-                        ListFragment()
-                    }
-                    else -> {
-                        MainFragment()
-                    }
+                    R.id.tab_main -> DashboardFragment.newInstance()
+                    R.id.tab_list -> ListFragment()
+                    else -> MainFragment()
                 }
             )
             true
