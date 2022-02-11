@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.accountbook.R
 import com.example.accountbook.data.Item
+import com.example.accountbook.data.ItemType
+import com.example.accountbook.format
 
 class ItemAdapter(private val data: List<Item>) : RecyclerView.Adapter<ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,6 +34,11 @@ class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         tvTime.text = item.time.toString()
         tvName.text = item.name
-        tvValue.text = item.value.toString()
+
+        val value = item.value.format() + '원'
+        tvValue.text = when (item.type) {
+            ItemType.INCOME -> "+$value"
+            ItemType.EXPENDITURE -> "-$value"
+        }
     }
 }
